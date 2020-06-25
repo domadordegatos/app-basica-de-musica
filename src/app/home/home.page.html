@@ -1,20 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" mode="ios">
+  <ion-toolbar color="tertiary">
     <ion-title>
-      Blank
+      Music Store
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding" mode="ios">
+  <div class="ion-text-center">
+    <ion-label>Toca los instrumentos y crea Musica</ion-label>
   </div>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of instrumentos">
+        <ion-card (click)="soundPlay(item)">
+          <img [src]="item.imagen" [alt]="imagen">
+          <ion-label>{{item.name}} </ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
